@@ -20,8 +20,18 @@ So, to calibrate our camera, all it's needed is to discover the camera projectio
 For applications dealing with measurements, the camera calibration step is necessary. To proceed, know how the camera reconstruct the scene it's required.
 
 ## How procede with camera calibration
-First, take pictures of a know object. The commun is to use a plannar calibration target which the features are know. 
-- In other words, the points of the target are know in the world coordinate system. 
+First, choose a know geometry object. For example, use a flat calibration target which the features are know. 
+- In other words, the points of the target are know in the world coordinate system.
+- The commun is choose a chessboard or a circle grids, but ArUco Markers works as well.
+
+Second, take pictures of it in differents poses. 
+- The pictures must have the calibration target in different positions and orientations
+- 20 pictures is more than necessary. 
+
+Third, correlate the image points with the world points of the calibration target. After this, the projection matrix is discovered and the camera calibration is finished! 
+
+## How I know my calibration was corrected? 
+
 
 ### How I can improve my results? 
 
