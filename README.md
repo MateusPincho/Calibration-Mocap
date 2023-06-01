@@ -1,46 +1,18 @@
 # Camera Calibration in Mocap Arena ![Status](https://img.shields.io/static/v1?style=flat&logo=github&label=status&message=active&color=blue) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)  
 Camera calibration Guide for Optical Tracking Systems
 
-- This project came from the need to improve the camera calibration results of [Mocap Arena](https://github.com/debOliveira/MoCapRasp), once the system works with an error in focal distance calibration, which impacts the accuracy of the results when switching between pairs of cameras.
-- This project presents a study of the calibration methods accuracy, analising the state of art technics available and using differents calibration targets.
-- Futhermore, this repo contains a guideline to you perfom camera calibration, since the image taking to parameters estimation
+<p align="center">
+<img src="https://user-images.githubusercontent.com/48807586/177659981-d0c4ffe2-3738-45ec-886e-c289925b0546.png" height="200" align="center">
+</p>
 
-## What is Camera calibration? 
-Camera calibration is the process to discover the camera configuration! The cameras that we are used to seeing are made with some importants parameters, which describes the image formation. 
-- The external parameters of the camera describe the position and orientation of the camera in the world system.
-- The internal parameters shows how the camera maps the perspective projetion points in the world onto its image.
+> - This project came from the need to improve the camera calibration results of [Mocap Arena](https://github.com/debOliveira/MoCapRasp), once the system works with an error in focal distance calibration, which impacts the accuracy of the results when switching between pairs of cameras.
 
-The image correlation with world coordinates is described by the perspective projection matrix. With some linear algebra, are possible to, given a point in the scene, convert him to the image coordinate system. The perspective projection matrix is show below: 
+This project presents a study of the calibration methods accuracy, analysing the state of art technics available for parameters estimation and your impacts in object tracking systems. If you wanna perfom camera calibration, this repository contains a general guideline to correctily estimate the intrisic parameters and have accurate measurements for visual systems. 
 
-![projection matrix](Bibliography/projection-matrix.jpg)
+## This project will study: 
 
-So, to calibrate our camera, all it's needed is to discover the camera projection matrix!
-- To see more about the camera calibration foudantions check [How reconstruc 3D space from images](https://github.com/MateusPincho/Calibration-Mocap/blob/main/Bibliography/How%20reconstruct%20a%20three%20dimensional%20space%20from%20images.pdf).
+- The matematical modeling of a camera and the process to estimate the intrisics parameters
+- The state of art calibration techniques and your residual reprojection error
+-  The parameters otimization process using non-linear alghoritms
 
-### Why I need calibrate my camera? 
-For applications dealing with measurements, the camera calibration step is necessary. To proceed, know how the camera reconstruct the scene it's required.
-
-## Camera models
-Based on the model choose to represent the camera geometry, the process to discover the camera parameters can change. Are several works destinated to study the camera geometry and propose a camera model, but most choosen models are:
-
-### Pinhole Camera Model
-### Generic Model - Kannala, Brandt
-### Fisheye Model - Scaramuzza 
-
-## How procede with camera calibration
-First, choose a know geometry object. For example, use a flat calibration target which the features are know. 
-- In other words, the points of the target are know in the world coordinate system.
-- The commun is choose a chessboard or a circle grids, but ArUco Markers works as well.
-
-Second, take pictures of it in differents poses. 
-- The pictures must have the calibration target in different positions and orientations
-- 20 pictures is more than necessary. 
-
-Third, correlate the image points with the world points of the calibration target. After this, the projection matrix is discovered and the camera calibration is finished! 
-
-## Calibration Patterns
-### Chessboard
-### Circle Grid
-### Charuco
-
-## Understanding the results and improving
+For more information about the camera calibration process, check: 
