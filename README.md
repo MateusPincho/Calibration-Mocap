@@ -1,4 +1,4 @@
-# Camera Calibration in Mocap Arena ![Status](https://img.shields.io/static/v1?style=flat&logo=github&label=status&message=active&color=blue) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)  
+# 📸 Camera Calibration in Mocap Arena ![Status](https://img.shields.io/static/v1?style=flat&logo=github&label=status&message=active&color=blue) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)  
 Camera calibration Guide for Optical Tracking Systems
 
 <p align="center">
@@ -9,10 +9,17 @@ Camera calibration Guide for Optical Tracking Systems
 
 This project presents a study of the calibration methods accuracy, analysing the state of art technics available for parameters estimation and your impacts in object tracking systems. If you wanna perfom camera calibration, this repository contains a general guideline to correctily estimate the intrisic parameters and have accurate measurements for visual systems. 
 
-## This project will study: 
+## 📖 This project will study: 
 
 - The matematical modeling of a camera and the process to estimate the intrisics parameters
 - The state of art calibration techniques and your residual reprojection error
 -  The parameters otimization process using non-linear alghoritms
 
+## 🗒️ Materials
+
+## 🔗 Useful links: 
+
 For more information about the camera calibration process, check: 
+
+- [Mocap Arena Guideline](https://engenhariacommateus.notion.site/Funcionamento-da-Arena-fc169ef74e1e4d0f98e3627c3132c88c)
+- [Mathematical Camera Model]()
