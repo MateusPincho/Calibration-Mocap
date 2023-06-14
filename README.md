@@ -13,9 +13,18 @@ This project presents a study of the calibration methods accuracy, analysing the
 
 - The matematical modeling of a camera and the process to estimate the intrisics parameters
 - The state of art calibration techniques and your residual reprojection error
--  The parameters otimization process using non-linear alghoritms
+-  The parameters otimization process using non-linear algorithms
 
 ## 🗒️ Materials
+
+The camera used for test the calibration algorithms is a [Raspberry V2 Cam](https://www.raspberrypi.com/documentation/accessories/camera.html#hardware-specification). For test the algorithm perfomance with high distortion lenses, is used [Raspberry V1 Cam](https://www.raspberrypi.com/documentation/accessories/camera.html#hardware-specification).
+
+The techniques is also tested in Mocap Arena, for analyse the their perfomance for optical tracking systems. 
+<p align="center">
+<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F61a60905-553c-4ac1-b434-015efaf3bc12%2FUntitled.jpeg?id=9e70f2cc-40ce-4df6-bf7c-6d4b1413bab4&table=block&spaceId=a904d409-e00a-4242-8a47-07265f36cce4&width=2000&userId=ebc47754-3afc-4c04-9529-5c9fc0097eb7&cache=v2" height="200" align="center">
+</p>
+
+Is used four models of calibration targets: **Chessboard, Circle Grids, ArUco and ChArUco**
 
 ## 🔗 Useful links: 
 
