@@ -1,44 +1,34 @@
-# Camera Calibration in Mocap Arena ![Status](https://img.shields.io/static/v1?style=flat&logo=github&label=status&message=active&color=blue) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)  
-Check the results of camera calibration project in Mocap Arena.
+# 📸 Camera Calibration in Mocap Arena ![Status](https://img.shields.io/static/v1?style=flat&logo=github&label=status&message=active&color=blue) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)  
+Camera calibration Guide for Optical Tracking Systems
 
-- This project came from the need to improve the camera calibration results of Mocap Arena, once our system works with an error in focal distance calibration, which impacts the accuracy of the results when switching between pairs of cameras.
-- Now, it's in charge of analyse the camera calibration process and the influence of differents calibration patterns.
-- Futhermore, this repo contains the code you need to calibrate your camera with differents camera models and patterns availables.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/48807586/177659981-d0c4ffe2-3738-45ec-886e-c289925b0546.png" height="200" align="center">
+</p>
 
-## What is Camera calibration? 
-Camera calibration is the process to discover the camera configuration! The cameras that we are used to seeing are made with some importants parameters, which describes the image formation. 
-- The external parameters of the camera describe the position and orientation of the camera in the world system.
-- The internal parameters shows how the camera maps the perspective projetion points in the world onto its image.
+> - This project came from the need to improve the camera calibration results of [Mocap Arena](https://github.com/debOliveira/MoCapRasp), once the system works with an error in focal distance calibration, which impacts the accuracy of the results when switching between pairs of cameras.
 
-The image correlation with world coordinates is described by the perspective projection matrix. With some linear algebra, are possible to, given a point in the scene, convert him to the image coordinate system. The perspective projection matrix is show below: 
+This project presents a study of the calibration methods accuracy, analysing the state of art technics available for parameters estimation and your impacts in object tracking systems. If you wanna perfom camera calibration, this repository contains a general guideline to correctily estimate the intrisic parameters and have accurate measurements for visual systems. 
 
-![projection matrix](Bibliography/projection-matrix.jpg)
+## 📖 This project will study: 
 
-So, to calibrate our camera, all it's needed is to discover the camera projection matrix!
-- To see more about the camera calibration foudantions check [How reconstruc 3D space from images](https://github.com/MateusPincho/Calibration-Mocap/blob/main/Bibliography/How%20reconstruct%20a%20three%20dimensional%20space%20from%20images.pdf) .
+- The matematical modeling of a camera and the process to estimate the intrisics parameters
+- The state of art calibration techniques and your residual reprojection error
+-  The parameters otimization process using non-linear algorithms
 
-### Why I need calibrate my camera? 
-For applications dealing with measurements, the camera calibration step is necessary. To proceed, know how the camera reconstruct the scene it's required.
+## 🗒️ Materials
 
-### How procede with camera calibration
-First, choose a know geometry object. For example, use a flat calibration target which the features are know. 
-- In other words, the points of the target are know in the world coordinate system.
-- The commun is choose a chessboard or a circle grids, but ArUco Markers works as well.
+The camera used for test the calibration algorithms is a [Raspberry V2 Cam](https://www.raspberrypi.com/documentation/accessories/camera.html#hardware-specification). For test the algorithm perfomance with high distortion lenses, is used [Raspberry V1 Cam](https://www.raspberrypi.com/documentation/accessories/camera.html#hardware-specification).
 
-Second, take pictures of it in differents poses. 
-- The pictures must have the calibration target in different positions and orientations
-- 20 pictures is more than necessary. 
+The techniques is also tested in Mocap Arena, for analyse the their perfomance for optical tracking systems. 
+<p align="center">
+<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F61a60905-553c-4ac1-b434-015efaf3bc12%2FUntitled.jpeg?id=9e70f2cc-40ce-4df6-bf7c-6d4b1413bab4&table=block&spaceId=a904d409-e00a-4242-8a47-07265f36cce4&width=2000&userId=ebc47754-3afc-4c04-9529-5c9fc0097eb7&cache=v2" height="200" align="center">
+</p>
 
-Third, correlate the image points with the world points of the calibration target. After this, the projection matrix is discovered and the camera calibration is finished! 
+Is used four models of calibration targets: **Chessboard, Circle Grids, ArUco and ChArUco**
 
-## Camera Models
-### Pinhole Camera Model
-### Generic Model - Kannala, Brandt
-### Fisheye Model - Scaramuzza 
+## 🔗 Useful links: 
 
-## Calibration Patterns
-### Chessboard
-### Circle Grid
-### Charuco
+For more information about the camera calibration process, check: 
 
-## Understanding the results and improving
+- [Mocap Arena Guideline](https://engenhariacommateus.notion.site/Funcionamento-da-Arena-fc169ef74e1e4d0f98e3627c3132c88c)
+- [Mathematical Camera Model]()
