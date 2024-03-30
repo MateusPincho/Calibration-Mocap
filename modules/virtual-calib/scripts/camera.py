@@ -1,7 +1,7 @@
 import numpy as np 
 import matplotlib.pyplot as plt
 from scipy.linalg import svd, rq
-from modules.rigid import to_homo, rectangle, split_homo
+from scripts.rigid import to_homo, rectangle, split_homo
 
 def generate_random_points(n_points):
     '''
