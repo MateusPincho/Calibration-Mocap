@@ -18,7 +18,7 @@ import random
 
 from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 
-patternSize = (7,7)
+patternSize = (15,11)
 
 def randt(L): # Confined in a cube with an edge of length L
     return [2*L*random.random()-L for _ in range(3)]
@@ -51,7 +51,7 @@ cubo = sim.getObject('/Cuboid[0]')
 sim.startSimulation()
 
 # Number of calibration images
-number_images = 5
+number_images = 10
 
 # See the Vision sensor image
 
@@ -60,7 +60,7 @@ while (t := sim.getSimulationTime()) < 10:
 
     for idx in range(number_images):
         # New aleatory position
-        ds = randt(0.3)
+        ds = randt(0.5)
         sim.setObjectPosition(cubo,-1, sum_coord(p,ds))
 
         # Take a photo
@@ -76,7 +76,7 @@ while (t := sim.getSimulationTime()) < 10:
             print(f"Corners detected in image {idx}")
                 
             # Write the image
-            cv2.imwrite(f'image{idx}.jpg',img)
+            cv2.imwrite(f'image4{idx}.jpg',img)
             time.sleep(0.75)
 
 sim.stopSimulation()
