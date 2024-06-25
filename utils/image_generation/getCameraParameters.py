@@ -18,7 +18,7 @@ import random
 
 from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 
-patternSize = (9,9)
+patternSize = (7,7)
 
 def randt(L): # Confined in a cube with an edge of length L
     return [2*L*random.random()-L for _ in range(3)]
@@ -45,7 +45,7 @@ sim.setInt32Param(sim.intparam_idle_fps, 0)
 
 # Get the vision sensor handle
 visionSensorHandle = sim.getObject('/Vision_sensor')
-#cubo = sim.getObject('/Cuboid[3]')
+cubo = sim.getObject('/Cuboid[3]')
 
 # Start simulation in CoppeliaSim
 sim.startSimulation()
@@ -55,13 +55,13 @@ number_images = 10
 
 # See the Vision sensor image
 
-while (t := sim.getSimulationTime()) < 5:
-    #p=sim.getObjectPosition(cubo,-1)
+while (t := sim.getSimulationTime()) < 10:
+    p=sim.getObjectPosition(cubo,-1)
 
     for idx in range(number_images):
         # New aleatory position
         ds = randt(0.3)
-        #sim.setObjectPosition(cubo,-1, sum_coord(p,ds))
+        sim.setObjectPosition(cubo,-1, sum_coord(p,ds))
 
         # Take a photo
         img, resX, resY = sim.getVisionSensorCharImage(visionSensorHandle)
@@ -71,8 +71,6 @@ while (t := sim.getSimulationTime()) < 5:
         # Check if are visible corners
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         detected, _ = cv2.findChessboardCornersSB(gray, patternSize, None)
-        
-        print(detected)
         
         if detected == True:
             print(f"Corners detected in image {idx}")
