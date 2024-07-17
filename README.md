@@ -1,21 +1,56 @@
-# 📸 Camera Calibration in Mocap Arena ![Status](https://img.shields.io/static/v1?style=flat&logo=github&label=status&message=active&color=blue) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)  
-Camera calibration Guide for Optical Tracking Systems
+# 📸 Camera Calibration Virtual Arena ![Status](https://img.shields.io/static/v1?style=flat&logo=github&label=status&message=active&color=blue) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)  
+Camera calibration Guide using CoppeliaSim. 
+
+> - This project came from the need to improve the camera calibration results of [Mocap Arena](https://github.com/debOliveira/MoCapRasp), once the system works with an error in focal distance calibration, which impacts the accuracy of the results.
+
+This project presents a camera calibration test environment, developed in CoppeliaSim Robot Simulator, where it's possible to test camera calibration methods and evaluate the accuracy of state of art technics available for parameters estimation.
+
+
+## 📖 This project also contains: 
+
+- A workflow for generate ground truth calibration images. 
+- A matematical explanation of camera models and the process to estimate the intrisics parameters.
+- A pratical guideline to correctily estimate the intrisic parameters and have accurate measurements.
+- An analisys of camera calibration methods with respect to accuracy evaluation. 
+
+## 🗒️ Requirements
+
+- CoppeliaSim EDU 4.6
+- Python 3.x
+- Numpy 
+- OpenCV 
+
+
+
+## 🖥️ Usage
+
+### First use
+
+- Install CoppeliaSim EDU in their [website](https://www.coppeliarobotics.com/)
+
+- Make a clone of this repo
+``` shell 
+git clone https://github.com/MateusPincho/Calibration-MoCap.git
+```
+
+### Generate non-distorted calibration image
+
+### Generate distorted calibration image
+
+### Perfom camera calibration with virtual images
+
+### Perfom camera calibration with real images
+
+## 🔗 Useful Links: 
+
+For more information about the camera calibration process, check: 
+
+- [Mocap Arena Guideline](https://engenhariacommateus.notion.site/Funcionamento-da-Arena-fc169ef74e1e4d0f98e3627c3132c88c)
+- [Mathematical Camera Model]()
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/48807586/177659981-d0c4ffe2-3738-45ec-886e-c289925b0546.png" height="200" align="center">
+<img src="https://user-images.githubusercontent.com/48807586/177659981-d0c4ffe2-3738-45ec-886e-c289925b0546.png" height="100" align="center">
 </p>
-
-> - This project came from the need to improve the camera calibration results of [Mocap Arena](https://github.com/debOliveira/MoCapRasp), once the system works with an error in focal distance calibration, which impacts the accuracy of the results when switching between pairs of cameras.
-
-This project presents a study of the calibration methods accuracy, analysing the state of art technics available for parameters estimation and your impacts in object tracking systems. If you wanna perfom camera calibration, this repository contains a general guideline to correctily estimate the intrisic parameters and have accurate measurements for visual systems. 
-
-## 📖 This project will study: 
-
-- The matematical modeling of a camera and the process to estimate the intrisics parameters
-- The state of art calibration techniques and your residual reprojection error
--  The parameters otimization process using non-linear algorithms
-
-## 🗒️ Materials
 
 The camera used for test the calibration algorithms is a [Raspberry V2 Cam](https://www.raspberrypi.com/documentation/accessories/camera.html#hardware-specification). For test the algorithm perfomance with high distortion lenses, is used [Raspberry V1 Cam](https://www.raspberrypi.com/documentation/accessories/camera.html#hardware-specification).
 
@@ -26,9 +61,7 @@ The techniques is also tested in Mocap Arena, for analyse the their perfomance f
 
 Is used four models of calibration targets: **Chessboard, Circle Grids, ArUco and ChArUco**
 
-## 🔗 Useful links: 
+## Developing team
+Mateus Pincho de Oliveira
 
-For more information about the camera calibration process, check: 
-
-- [Mocap Arena Guideline](https://engenhariacommateus.notion.site/Funcionamento-da-Arena-fc169ef74e1e4d0f98e3627c3132c88c)
-- [Mathematical Camera Model]()
+Lorenzo Carrera de Oliveira
