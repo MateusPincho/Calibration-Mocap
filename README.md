@@ -3,8 +3,9 @@ Camera calibration Guide using CoppeliaSim.
 
 > - This project came from the need to improve the camera calibration results of [Mocap Arena](https://github.com/debOliveira/MoCapRasp), once the system works with an error in focal distance calibration, which impacts the accuracy of the results.
 
-This project presents a camera calibration test environment, developed in CoppeliaSim Robot Simulator, where it's possible to test camera calibration methods and evaluate the accuracy of state of art technics available for parameters estimation.
+Camera-based measurement and space reconstruction offer the advantages of automation, speed, and accuracy. However, precise measurements necessitate the determination of the camera's intrinsic parameters through calibration. This involves capturing images of a known calibration pattern and solving for the camera model parameters. Reprojection error, the discrepancy between predicted and observed image points, is a key factor influencing calibration accuracy. Minimizing this error is the goal of camera calibration to ensure reliable measurements.
 
+This project presents a camera calibration test environment, developed in CoppeliaSim Robot Simulator, where it's possible to test camera calibration methods and evaluate the accuracy of state of art technics available for parameters estimation.
 
 ## 📖 This project also contains: 
 
