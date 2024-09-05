@@ -1,14 +1,39 @@
 ideia inicial: 
 
 Calibration_Mocap/
+├── calibrate/
+│   ├── modules
+│   ├── calibrate.py
+├── debug/
+│   ├── calibrate/
+│   ├── image_generation/
+│   ├── accuracy_evaluation/
 ├── docs/
-├── src/
-│   ├── __init__.py
-│   ├── calibration.py
-│   ├── image_generation.py
-├── notebooks/
-├── tests/
-├── scripts/
+├── image_generation/
+│   ├── modules/
+│   ├── generate_images.py
+├── images/
 ├── requirements.txt
-├── setup.py
 └── README.md
+
+pastas principais:
+
+calibrate:
+- script para obter os resultados da calibração
+- salvar os resultados obtidos e enviar para modulo de accuracy_evaluation
+- independe da natureza das imagens
+
+image_generation:
+- script para geração de imagens virtuais para calibração
+- configurar as cenas para comportar automação
+- escolha do padrão de calibração no momento de rodar o programa (CLI)
+
+debug_notebooks:
+- uma serie de notebooks que contem uma explicação maior sobre o que esta sendo feito em cada script
+- poder avaliar o passo a passo da execução
+- avaliar a acuracia da calibração por meio de notebooks com gráficos e analises estatisticas
+    - posicionamento do erro de reprojeção
+    - estatistica dos parametros da câmera estimados
+    - comparação com o ground-truth gerado pelo coppelia
+    
+- notebook para avaliar o método de calibração
